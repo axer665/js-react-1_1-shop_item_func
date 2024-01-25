@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 
 function ShopItemFunc(props) {
     const { item } = props;
-    const price = typeof item.price === "number" ? item.price.toFixed(2) : item.price; 
-    
+    const price = typeof item.price === "number" ? item.currency + '' + item.price.toFixed(2) : item.price; 
+
     return (
         <div className="main-content">
             <h2>{item.brand}</h2>
@@ -16,7 +16,6 @@ function ShopItemFunc(props) {
             <div className="divider"></div>
             <div className="purchase-info">
                 <div className="price">
-                    {item.currency}
                     {price}
                 </div>
                 <button>Добавить в корзину</button>
